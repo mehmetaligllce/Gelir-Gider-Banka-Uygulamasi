@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f0f1a;
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+a {
+    color: #7c83ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e94560;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 16px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: #c0c0c0;
+    text-decoration: none;
+    margin-right: 28px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #e94560;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar button {
+    background: linear-gradient(135deg, #e94560, #c73652);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(233, 69, 96, 0.3);
+}
+
+.navbar button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+}
+
+.login-container,
+.containerRegister {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container h1,
+.login-container h2,
+.containerRegister h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #7c83ff, #e94560);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-container form,
+.containerRegister form {
+    background: rgba(22, 33, 62, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+}
+
+.login-container input,
+.containerRegister input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus,
+.containerRegister input:focus {
+    border-color: #7c83ff;
+    box-shadow: 0 0 0 3px rgba(124, 131, 255, 0.2);
+}
+
+.login-container input::placeholder,
+.containerRegister input::placeholder {
+    color: #666;
+}
+
+.login-container button[type="submit"],
+.containerRegister button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #7c83ff, #5a60e0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 131, 255, 0.3);
+    margin-top: 8px;
+}
+
+.login-container button[type="submit"]:hover,
+.containerRegister button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 131, 255, 0.5);
+}
+
+.login-container p,
+.containerRegister p {
+    margin-top: 16px;
+    color: #888;
+    font-size: 14px;
+}
+
+.login-container p a,
+.containerRegister p a {
+    color: #7c83ff;
+    font-weight: 600;
+}
+
+.login-container br,
+.containerRegister br {
+    display: none;
+}
+
+.dashboard-container {
+    padding: 30px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.dashboard-container h2 {
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c83ff, #e94560);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+
+.dashboard-container h4 {
+    color: #888;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.summary-boxes {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.summary-boxes p {
+    flex: 1;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.summary-boxes p:hover {
+    transform: translateY(-4px);
+}
+
+.summary-boxes p:nth-child(1) {
+    background: linear-gradient(135deg, rgba(0, 184, 148, 0.15), rgba(0, 184, 148, 0.05));
+    border-left: 4px solid #00b894;
+    color: #00b894;
+}
+
+.summary-boxes p:nth-child(2) {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.15), rgba(233, 69, 96, 0.05));
+    border-left: 4px solid #e94560;
+    color: #e94560;
+}
+
+.summary-boxes p:nth-child(3) {
+    background: linear-gradient(135deg, rgba(124, 131, 255, 0.15), rgba(124, 131, 255, 0.05));
+    border-left: 4px solid #7c83ff;
+    color: #7c83ff;
+}
+
+.dashboard-container .recharts-wrapper {
+    margin: 30px auto;
+    display: block;
+}
+
+.expenses-container,
+.subscriptions-container {
+    padding: 30px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.expenses-container h2,
+.subscriptions-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(124, 131, 255, 0.3);
+}
+
+.containerExpenseForm,
+.subscriptions-form {
+    background: rgba(22, 33, 62, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.containerExpenseForm h3,
+.subscriptions-form h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ccc;
+    margin-bottom: 18px;
+}
+
+.containerExpenseForm input,
+.containerExpenseForm select,
+.subscriptions-form input,
+.subscriptions-form select {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.containerExpenseForm input:focus,
+.containerExpenseForm select:focus,
+.subscriptions-form input:focus,
+.subscriptions-form select:focus {
+    border-color: #7c83ff;
+    box-shadow: 0 0 0 3px rgba(124, 131, 255, 0.15);
+}
+
+.containerExpenseForm input::placeholder,
+.subscriptions-form input::placeholder {
+    color: #555;
+}
+
+.containerExpenseForm label,
+.subscriptions-form label {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.containerExpenseForm button[type="submit"],
+.subscriptions-form button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, #00b894, #00a382);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+    margin-top: 6px;
+}
+
+.containerExpenseForm button[type="submit"]:hover,
+.subscriptions-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+}
+
+.containerExpenseForm br,
+.subscriptions-form br {
+    display: none;
+}
+
+.containerExpenseForm p,
+.subscriptions-form p {
+    color: #00b894;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.expenses h2,
+.subscriptionlist h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ccc;
+    margin-bottom: 16px;
+    margin-top: 10px;
+}
+
+.expenses table,
+.subscriptionlist table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(22, 33, 62, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.expenses thead,
+.subscriptionlist thead {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.expenses th,
+.subscriptionlist th {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #7c83ff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(124, 131, 255, 0.2);
+}
+
+.expenses td,
+.subscriptionlist td {
+    padding: 13px 18px;
+    font-size: 14px;
+    color: #ccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.expenses tbody tr,
+.subscriptionlist tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.expenses tbody tr:hover,
+.subscriptionlist tbody tr:hover {
+    background-color: rgba(124, 131, 255, 0.06);
+}
+
+.expenses td button,
+.subscriptionlist td button {
+    background: linear-gradient(135deg, #e94560, #c73652);
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(233, 69, 96, 0.2);
+}
+
+.expenses td button:hover,
+.subscriptionlist td button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+    background: linear-gradient(135deg, #ff5a75, #e94560);
+}
+
+.subscriptionlist ul {
+    list-style: none;
+    padding: 14px 20px;
+    background: rgba(233, 69, 96, 0.1);
+    border-left: 4px solid #e94560;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.subscriptionlist ul li {
+    color: #e0e0e0;
+    font-size: 14px;
+    padding: 2px 0;
+}
+
+.subscriptionlist>p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+div>p:only-child {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 18px;
+    color: #666;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a3a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a4a;
+}
