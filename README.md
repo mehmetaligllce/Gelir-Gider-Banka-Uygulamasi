@@ -3,6 +3,7 @@
 Kullanıcıların gelir ve giderlerini kaydedebildiği, taksitli işlemlerini takip edebildiği ve aboneliklerini yönetebildiği bir kişisel finans yönetim uygulaması. Uygulama, verileri görselleştirerek kullanıcıya harcama alışkanlıkları hakkında istatistikler sunar.
 
 ##  Siteye giriş için: https://renvstudio.com/
+CSS ler için yapay zekadan yardım alınmıştır.
 
 ## Özellikler
 Kullanıcı kayıt, giriş ve çıkış sistemi
